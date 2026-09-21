@@ -248,7 +248,7 @@ export const birthdayData: BirthdayConfig = {
       "I hope this year brings you all the dreams you whisper into the dark, all the laughter your heart can hold, and the quiet assurance of knowing just how deeply, unconditionally you are loved."
     ],
     closing: "With all my heart and forever yours,",
-    signature: "Your Love❤️",
+    signature: "Dharmik ❤️",
     postScript: "P.S. Make sure you leave room for birthday cake..."
   },
 

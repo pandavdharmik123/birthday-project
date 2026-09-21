@@ -67,8 +67,9 @@ export const MusicPlayer: React.FC<MusicPlayerProps> = ({
       <audio
         ref={audioRef}
         src={song.audioUrl}
+        preload="auto"
+        loop
         onTimeUpdate={handleTimeUpdate}
-        onEnded={onTogglePlay}
       />
 
       <div className="max-w-4xl mx-auto">
