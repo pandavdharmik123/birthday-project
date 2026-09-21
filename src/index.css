@@ -1,0 +1,164 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-wine-deep: #140409;
+    --color-wine-dark: #230711;
+    --color-wine: #3D0C1D;
+    --color-rose: #DE8E9D;
+    --color-ivory: #FDFBF7;
+    --color-gold: #D4AF37;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    background-color: #0B090A;
+    color: #FDFBF7;
+    font-family: 'Outfit', sans-serif;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  /* Custom subtle scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0D0B0D;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #3D0C1D;
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #851A3F;
+  }
+}
+
+/* Film Grain Overlay */
+.film-grain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 99;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Glassmorphism Styles */
+.glass-panel {
+  background: rgba(35, 7, 17, 0.45);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(238, 186, 194, 0.12);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
+}
+
+.glass-card {
+  background: rgba(22, 20, 22, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(238, 186, 194, 0.08);
+}
+
+.glass-gold {
+  background: rgba(212, 175, 55, 0.07);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  box-shadow: 0 10px 30px -10px rgba(212, 175, 55, 0.15);
+}
+
+/* Polaroid Realism */
+.polaroid-frame {
+  background: #FFFDF9;
+  box-shadow: 
+    0 10px 25px -5px rgba(0, 0, 0, 0.5),
+    0 2px 6px -1px rgba(0, 0, 0, 0.3),
+    inset 0 0 40px rgba(0, 0, 0, 0.02);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+}
+
+.polaroid-frame:hover {
+  transform: scale(1.03) rotate(0deg) !important;
+  box-shadow: 
+    0 25px 40px -10px rgba(0, 0, 0, 0.7),
+    0 0 25px rgba(222, 142, 157, 0.25);
+  z-index: 20;
+}
+
+/* Washi Tape Effect */
+.washi-tape {
+  position: absolute;
+  height: 24px;
+  width: 90px;
+  background: rgba(244, 235, 218, 0.75);
+  backdrop-filter: blur(2px);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+  border-left: 2px dashed rgba(0,0,0,0.1);
+  border-right: 2px dashed rgba(0,0,0,0.1);
+}
+
+/* Letter Texture */
+.parchment-paper {
+  background: #FAF5EC;
+  background-image: 
+    radial-gradient(#E8DAC5 0.75px, transparent 0.75px),
+    linear-gradient(to bottom, rgba(255,255,255,0.6), rgba(245,236,220,0.9));
+  background-size: 16px 16px, 100% 100%;
+  box-shadow: 
+    0 25px 50px -12px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(180, 150, 120, 0.25);
+}
+
+/* Vinyl Record Grooves */
+.vinyl-record {
+  background: radial-gradient(circle, #0d0d0d 30%, #1a1a1a 31%, #0d0d0d 32%, #1a1a1a 33%, #0d0d0d 45%, #1f1f1f 46%, #0d0d0d 60%, #1f1f1f 61%, #0d0d0d 75%, #1a1a1a 76%, #0a0a0a 100%);
+  box-shadow: 
+    0 15px 35px rgba(0,0,0,0.8),
+    inset 0 0 20px rgba(255,255,255,0.08);
+}
+
+/* Wax Seal Effect */
+.wax-seal {
+  background: radial-gradient(circle at 35% 35%, #9b1d3a, #570a1d);
+  box-shadow: 
+    0 6px 15px rgba(0,0,0,0.4),
+    inset 0 2px 3px rgba(255,255,255,0.4),
+    inset 0 -3px 5px rgba(0,0,0,0.5);
+}
+
+/* Candle flame glow */
+.flame {
+  background: radial-gradient(ellipse at bottom, #FFF7B2 0%, #FFB03A 45%, #FF4500 85%, transparent 100%);
+  filter: drop-shadow(0 0 8px #FFA500) drop-shadow(0 0 20px #FF4500);
+  animation: flicker 1.8s infinite alternate ease-in-out;
+  border-radius: 50% 50% 20% 20% / 60% 60% 40% 40%;
+}
+
+@keyframes flicker {
+  0% { transform: scale(1) rotate(-1deg); opacity: 0.95; }
+  25% { transform: scale(1.06, 0.96) rotate(1.5deg); opacity: 1; }
+  50% { transform: scale(0.95, 1.05) rotate(-1deg); opacity: 0.9; }
+  75% { transform: scale(1.04, 1) rotate(2deg); opacity: 1; }
+  100% { transform: scale(1) rotate(-0.5deg); opacity: 0.97; }
+}
+
+/* Ambient glow blobs */
+.glow-orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(80px);
+  pointer-events: none;
+  opacity: 0.25;
+}
